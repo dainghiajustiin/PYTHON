@@ -1,0 +1,22 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    lst.append(lst[0])
+
+    pos = 0
+
+    for i in range(n):
+        if(lst[pos] + lst[pos+1] <= lst[i] + lst[i+1]):
+            pos = i 
+    
+    print(lst[pos], lst[pos + 1])
+
+    return
+
+solve()
