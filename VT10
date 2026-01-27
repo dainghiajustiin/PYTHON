@@ -1,0 +1,17 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    
+    lst.sort(reverse=True)
+    for elm in lst:
+        print(elm, end = ' ')
+
+    return
+
+solve()
