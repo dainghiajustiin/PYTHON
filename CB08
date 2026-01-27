@@ -1,0 +1,15 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    a, b = list(map(int, input().split()))
+
+    ans = '%d + %d = %d' %(a, b, a + b)
+    print(ans)
+
+    return
+
+solve()
