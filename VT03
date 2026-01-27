@@ -1,0 +1,21 @@
+lst = []
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    pos = 0
+
+    for i in range(n):
+        if(lst[pos] <= lst[i]): pos = i 
+
+    print(pos)
+
+    return
+
+solve()
