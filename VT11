@@ -1,0 +1,17 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    arr = lst[1:n-1]
+    arr.sort()
+    print(lst[0], end=' ')
+    for elm in arr:
+        print(elm, end=' ')
+    print(lst[n - 1])
+    
+solve()
