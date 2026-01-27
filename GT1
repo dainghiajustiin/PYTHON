@@ -1,0 +1,16 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    S = 1
+
+    for i in range(1, n + 1): S *= i 
+    print(S)
+
+    return
+
+solve()
