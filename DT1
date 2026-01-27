@@ -1,0 +1,17 @@
+import math 
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    a = int(input())
+    pi = math.acos(-1)
+    ans = pi*a*a/2 
+    print(f"{ans:.3f}")
+
+    return
+
+solve()
