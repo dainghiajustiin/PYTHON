@@ -1,0 +1,27 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = input()
+    i = 0
+    add = 0
+    STR = ""
+
+    while(n[i] != '.'):
+        STR += n[i]
+        i += 1
+    i += 1
+    if(n[i] >= '5'): add = 1
+
+    ans = int(STR)
+    if(ans < 0): ans -= add 
+    else: ans += add 
+
+    print(ans) 
+
+    return
+
+solve()
