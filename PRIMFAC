@@ -1,0 +1,25 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    dct = {}
+    n = int(input())
+    for i in range(2, int(n**0.5) + 1):
+        if(n % i == 0):
+            cnt = 0
+            while(n % i == 0):
+                cnt += 1
+                n //= i
+            dct[i] = cnt
+    if(n > 1): dct[n] = 1
+
+    print(len(dct))
+    for elm in dct:
+        print(elm, dct[elm])
+
+    return
+
+solve()
