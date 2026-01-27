@@ -1,0 +1,26 @@
+lst = []
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    ma1 = -10**9 - 7
+    ma2 = -10**9 - 7
+
+    for elm in lst:
+        if(elm > ma1):
+            ma2 = ma1 
+            ma1 = elm 
+        elif(elm > ma2 and elm != ma1): ma2 = elm 
+
+    if(ma1 == ma2 or ma2 < -10**9): print("NOT FOUND")
+    else: print(ma2)
+
+    return
+
+solve()
