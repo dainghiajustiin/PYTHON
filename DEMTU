@@ -1,0 +1,24 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    s = input()
+    cnt = 0
+    ok = True 
+
+    for elm in s:
+        if(elm != ' '):
+            if(ok): 
+                cnt += 1
+                ok = False
+        else:
+            ok = True 
+
+    print(cnt)           
+
+    return
+
+solve()
