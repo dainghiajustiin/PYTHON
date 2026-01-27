@@ -1,0 +1,28 @@
+import re 
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    try:
+        line = input().strip()
+        if not line:
+            return
+        t = int(line)
+        
+        for _ in range(t):
+            s = input()
+            
+            spaces = re.findall(r" +", s)
+            
+            print(len(spaces))
+            
+    except EOFError:
+        pass
+
+    return
+
+solve()
