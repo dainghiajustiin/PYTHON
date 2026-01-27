@@ -1,0 +1,15 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    a, b = list(map(str, input().split()))
+
+    for i in range(ord(a), ord(b) + 1):
+        print(chr(i - ord('a') + ord('A')), end=' ')
+
+    return
+
+solve()
