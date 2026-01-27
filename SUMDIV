@@ -1,0 +1,24 @@
+def sumDivisor(n):
+    res = 0
+    for i in range(1, int(n**0.5) + 1, 1):
+        if(n % i == 0):
+            res += i 
+            if(i*i != n): res += n//i 
+    return res
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    T = int(input())
+
+    for _ in range(T):
+        n = int(input())
+        print(sumDivisor(n))
+
+    return
+
+solve()
