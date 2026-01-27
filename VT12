@@ -1,0 +1,16 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+
+    lst.sort()
+    print(lst[n-1] - lst[0])
+
+    return
+
+solve()
