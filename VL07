@@ -1,0 +1,16 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n, k = list(map(int, input().split()))
+    S = 1
+    for i in range(1, min(k, n - k) + 1): S = S*(n - i + 1)/i
+
+    print(f"{S:.0f}") 
+
+    return
+
+solve()
