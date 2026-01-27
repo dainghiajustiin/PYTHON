@@ -1,0 +1,13 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    a, b, c = list(map(int, input().split()))
+    print(max(a, b, c))
+
+    return
+
+solve()
