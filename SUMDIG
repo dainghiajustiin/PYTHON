@@ -1,0 +1,23 @@
+def sumDigit(n):
+    res = 0
+    while(n > 0):
+        res += n%10
+        n //= 10
+    return res
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    T = int(input())
+
+    for _ in range(T):
+        n = int(input())
+        print(sumDigit(n))
+
+    return
+
+solve()
