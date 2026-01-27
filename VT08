@@ -1,0 +1,26 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    arr = [0] * n
+
+    for i in range(n):
+        if(i&1):
+            L = 0
+            R = 0
+            if(i > 0): L = lst[i-1]
+            if(i < n - 1): R = lst[i + 1]
+            arr[i] = lst[i] + abs(L - R)
+        else: arr[i] = lst[i]
+
+    for elm in arr:
+        print(elm, end = ' ')
+
+    return
+
+solve()
