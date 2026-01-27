@@ -1,0 +1,36 @@
+MAXN = 123
+INF = 10**10 + 7
+
+n = 0
+m = 0
+arr = [[0]*MAXN]*MAXN
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n, m = list(map(int, input().split()))
+    for _ in range(n):
+        arr[_] = list(map(int, input().split()))
+
+    for col in range(1, m):
+        for row in range(0, n):
+            a = -INF
+            b = arr[row][col - 1]
+            c = -INF
+            if(row - 1 >= 0): a = arr[row - 1][col - 1]
+            if(row + 1 < n): c = arr[row + 1][col - 1]
+
+            arr[row][col] += max(a, b, c)
+    
+    ans = -INF 
+    for row in range(0, n):
+        ans = max(ans, arr[row][m-1])
+    print(ans)
+    
+    return
+
+solve()
