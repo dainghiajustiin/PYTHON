@@ -1,0 +1,25 @@
+import math
+
+MAXN = 10**6 + 7
+lst = [0]
+
+
+def init():
+
+    for i in range(MAXN):
+        lst.append(math.sqrt(i + lst[-1]))
+    
+    return
+
+def solve():
+    init()
+
+    T = int(input())
+
+    for _ in range(T):
+        n = int(input())
+        print(f"{lst[n+1]:.5f}")
+
+    return
+
+solve()
