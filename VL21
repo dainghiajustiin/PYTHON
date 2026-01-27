@@ -1,0 +1,25 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    N = int(input())
+
+    L = 0 
+    R = N 
+    ans = 0
+
+    while(L <= R):
+        M = (L + R)//2
+        if(M*(M + 1)//2 <= N):
+            ans = M 
+            L = M + 1
+        else: R = M - 1
+    
+    print(ans)
+
+    return
+
+solve()
