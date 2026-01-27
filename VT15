@@ -1,0 +1,17 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+
+    lst.sort()
+    ans = max(lst[0]*lst[1]*lst[2], lst[0]*lst[1]*lst[n-1], lst[0]*lst[n-2]*lst[n-1], lst[n-3]*lst[n-2]*lst[n-1])
+    print(ans)
+
+    return
+
+solve()
