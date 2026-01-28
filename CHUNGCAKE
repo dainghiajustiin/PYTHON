@@ -1,0 +1,26 @@
+arr = [False] * 2001
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n, V = list(map(int, input().split()))
+    lst = list(map(int, input().split()))
+
+    arr[0] = True 
+    for i in range(n):
+        for j in range(V, arr[i] - 1, -1):
+            if(arr[j - lst[i]] == True):
+                arr[j] = True 
+
+    for i in range(V, -1, -1):
+        if(arr[i] == True):
+            print(i)
+            return 
+
+    return
+
+solve()
