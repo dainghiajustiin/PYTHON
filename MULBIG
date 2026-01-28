@@ -1,0 +1,14 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    a = int(input())
+    b = int(input())
+    print(a*b)
+
+    return
+
+solve()
