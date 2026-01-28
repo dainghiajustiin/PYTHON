@@ -1,0 +1,26 @@
+MAXN = 123
+
+arr = [[0]*MAXN]*MAXN
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    cnt = 0
+    S = 0
+
+    for i in range(n):
+        for j in range(n):
+            if(i == j): S += lst[cnt]
+            cnt += 1
+    
+    print(S)
+
+    return
+
+solve()
