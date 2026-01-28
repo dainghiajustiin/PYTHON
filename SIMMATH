@@ -1,0 +1,21 @@
+MOD = 998244353
+
+def sum(n):
+    return n*(n+1)//2
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    T = int(input())
+
+    for _ in range(T):
+        a, b, c = list(map(int, input().split()))
+        ans = sum(a) * sum(b) * sum(c) % MOD 
+        print(ans)
+    return
+
+solve()
