@@ -1,0 +1,53 @@
+BIT = [0] * 101010
+arr = []
+n = 0
+
+def add(idx, value):
+    while(idx < 101010):
+        BIT[idx] = max(BIT[idx], value)
+        idx += idx&-idx
+    return 
+
+def get(idx):
+    res = 0 
+    while(idx > 0):
+        res = max(res, BIT[idx])
+        idx -= idx&-idx 
+    return res
+
+def lower(value, N):
+    L = 0 
+    R = N - 1
+    res = N
+    while(L <= R):
+        M = (L + R)//2
+        if(arr[M] >= value):
+            res = M
+            R = M - 1
+        else:
+            L = M + 1
+    return res
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    
+    for i in range(n):
+        arr.append(lst[i])
+    arr.sort()
+
+    for i in range(n):
+        pos = lower(lst[i], n) + 5
+        len = get(pos - 1) + 1
+        add(pos, len)
+
+    print(get(101000))
+    return
+
+solve()
