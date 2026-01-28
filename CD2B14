@@ -1,0 +1,6 @@
+from math import isqrt
+n = int(input())
+if( n < 0 ): print("NO")
+else:
+    t = isqrt(n)
+    print( t if t*t == n else "NO" )
