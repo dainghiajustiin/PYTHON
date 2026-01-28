@@ -1,0 +1,11 @@
+def gcd(a, b):
+    if(b == 0): return a
+    return gcd(b, a % b)
+
+with open('ucln.inp', 'r') as file_in:
+    content = file_in.readline()
+    m, n = map(int, content.strip().split())
+
+with open('UCLN.OUT', 'w') as file_out:
+    result = gcd(m, n)
+    file_out.write(str(result))
