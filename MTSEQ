@@ -1,0 +1,45 @@
+MOD = 10**9 + 7
+
+T = [[3, -2, 1], 
+     [1, 0, 0], 
+     [0, 1, 0]]
+v = [[3],
+     [2],
+     [1]]
+
+def mul(A, B, n, m, p):
+    C = [[0 for _ in range(p)] for _ in range(n)]
+
+    for i in range(n):
+        for j in range(p):
+            for k in range(m):
+                C[i][j] = (C[i][j] + A[i][k] * B[k][j]) % MOD
+    
+    return C
+
+def dnc(A, a, n):
+    if(n == 0):
+        I = [[0 for _ in range(a)] for _ in range(a)]
+
+        for i in range(a):
+            I[i][i] = 1
+        
+        return I
+    
+    B = dnc(A, a, n//2)
+    B = mul(B, B, a, a, a)
+
+    if(n % 2 == 0):
+        return B
+    else:
+        return mul(A, B, a, a, a)
+    
+nTest = int(input())
+lst = list(map(int, input().split()))
+
+for i in range(nTest):
+    if(lst[i] < 4):
+        print(lst[i], end = ' ')
+    else:
+        result = dnc(T, 3, lst[i] - 3)
+        print(mul(result, v, 3, 3, 1)[0][0], end = ' ')
