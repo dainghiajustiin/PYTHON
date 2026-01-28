@@ -1,0 +1,19 @@
+def init():
+
+    return
+
+def solve():
+    init()
+    
+    a, b = list(map(int, input().split()))
+    res = 1
+    while(b > 0):
+        if(b&1):
+            res = res*a 
+        a = a*a 
+        b >>= 1
+    print(res)
+
+    return
+
+solve()
