@@ -1,0 +1,39 @@
+import random
+
+def power(A, n, mod):
+    if(n == 0): return 1
+
+    B = power(A, n//2, mod) 
+    B = B * B % mod
+
+    if(n & 1): return B * A % mod
+    return B
+
+def fermat_check(N):
+    if(N < 2): return False
+
+    time = 50
+
+    for i in range(time):
+        A = random.randint(1, N - 1)
+        if(power(A, N - 1, N) != 1): return False
+
+    return True
+
+def super_prime(N):
+    if(N < 2): return False
+    
+    while(N > 0):
+        if(fermat_check(N) == False): return False
+        N //= 10
+
+    return True
+
+num = int(input())
+
+for i in range(num + 1):
+    if(super_prime(i) == True):
+        print(i, end = ' ')
+
+if(num < 2):
+    print(-1)
