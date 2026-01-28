@@ -1,0 +1,20 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    lst = [1]
+    for i in range(1, 1010):
+        lst.append(lst[-1]*i)
+    
+    n = int(input())
+    arr = list(map(int, input().split()))
+
+    for i in range(n):
+        print(lst[arr[i]])
+
+    return
+
+solve()
