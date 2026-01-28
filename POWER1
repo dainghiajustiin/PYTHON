@@ -1,0 +1,24 @@
+def pw(a, b, mod):
+    res = 1
+    while(b > 0):
+        if(b&1):
+            res = res*a % mod 
+        a = a*a % mod 
+        b >>= 1
+    return res 
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    MOD = 10**9 + 7
+    a, b = list(map(int, input().split()))
+
+    print(pw(a, b, MOD))
+
+    return
+
+solve()
