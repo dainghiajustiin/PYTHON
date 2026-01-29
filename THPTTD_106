@@ -1,0 +1,19 @@
+TASK = "Digits"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+def sum(n):
+    res = 0
+    while(n > 0):
+        res += n%10
+        n //= 10
+    return res
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    T = int(fileIn.readline().strip())
+
+    for i in range(T):
+        N = int(fileIn.readline().strip())
+        while(N >= 10):
+            N = sum(N)
+        fileOut.write(str(N) + '\n')
