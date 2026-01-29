@@ -1,0 +1,18 @@
+TASK = "CountDiv"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+def gcd(a, b):
+    if(b == 0): return a 
+    return gcd(b, a%b)
+
+def get(N, a):
+    return N//a
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    T = int(fileIn.readline().strip())
+    for _ in range(T):
+        L, R, a, b = list(map(int, fileIn.readline().split()))
+        ab = a*b//gcd(a, b)
+        ans = (get(R, a) - get(L - 1, a)) + (get(R, b) - get(L - 1, b)) - (get(R, ab) - get(L - 1, ab))
+        fileOut.write(str(ans) + '\n')
