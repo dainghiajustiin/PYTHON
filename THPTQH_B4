@@ -1,0 +1,53 @@
+TASK = "qua"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+MAXN = 5*10**5 + 9
+BIT = [0] * MAXN 
+zip = []
+lst = []
+
+def getLower(value, N):
+    L = 0
+    R = N - 1
+    res = N 
+
+    while(L <= R):
+        M = (L + R)//2
+        if(zip[M] >= value):
+            res = M 
+            R = M - 1
+        else:
+            L = M + 1
+    return res
+
+def add(idx, sum):
+    while(idx < MAXN):
+        BIT[idx] = max(BIT[idx], sum)
+        idx += idx&-idx 
+    return 
+
+def get(idx):
+    res = 0
+    while(idx > 0):
+        res = max(BIT[idx], res)
+        idx -= idx&-idx 
+    return res
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    n = int(fileIn.readline().strip())
+
+    for i in range(n):
+        a, b = list(map(int, fileIn.readline().split()))
+        zip.append(a)
+        lst.append([a, b])
+    
+    zip.sort()
+
+    for i in range(len(lst)):
+        pos = getLower(lst[i][0], n) + 1
+        sum = get(pos - 1) + lst[i][1]
+        add(pos, sum)
+
+    ans = get(MAXN - 1)
+    fileOut.write(str(ans))
