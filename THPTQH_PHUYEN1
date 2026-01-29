@@ -1,0 +1,34 @@
+TASK = "bai1"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+def isp(n):
+    if(n == 2 or n == 3): return True
+    if(n&1 == 0): return False
+    if(n%3 == 0): return False
+
+    for i in range(5, n, 6):
+        if(i*i > n): break
+        if(n % i == 0): return False 
+        if(n % (i + 2) == 0): return False 
+    return (n > 1)
+
+arr = [[] for i in range(10)]
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    n = int(fileIn.readline().strip())
+    arr[1].append(2)
+    arr[1].append(3)
+    arr[1].append(5)
+    arr[1].append(7)
+
+    for i in range(2, n + 1):
+        for elm in arr[i-1]:
+            if(isp(elm*10 + 1)): arr[i].append(elm*10 + 1)
+            if(isp(elm*10 + 3)): arr[i].append(elm*10 + 3)
+            if(isp(elm*10 + 5)): arr[i].append(elm*10 + 5)
+            if(isp(elm*10 + 7)): arr[i].append(elm*10 + 7)
+            if(isp(elm*10 + 9)): arr[i].append(elm*10 + 9)
+
+    for elm in arr[n]:
+        fileOut.write(str(elm) + '\n')
