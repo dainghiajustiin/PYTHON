@@ -1,0 +1,11 @@
+TASK = "tomjerry"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    T = int(fileIn.readline().strip())
+
+    for i in range(T):
+        N = int(fileIn.readline().strip())
+        ans = 1 - (N&1)
+        fileOut.write(str(ans) + '\n')
