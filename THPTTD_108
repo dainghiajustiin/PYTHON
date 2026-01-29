@@ -1,0 +1,17 @@
+TASK = "CountPairs"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+def get(L, R):
+    return max(R - L + 1, 0)
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    T = int(fileIn.readline().strip())
+    for _ in range(T):
+        K = int(fileIn.readline().strip())
+        cnt = 0
+        for a in range(1, K//2 + 1):
+            b = K - a 
+            if(a >= b): continue
+            cnt += get(a + 1, b)
+        fileOut.write(str(cnt) + '\n')
