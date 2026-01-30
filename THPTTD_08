@@ -1,0 +1,29 @@
+TASK = "TACHSO"
+FILE_INPUT = TASK + ".inp"
+FILE_OUTPUT = TASK + ".OUT"
+
+def toInt(STR):
+    res = 0
+    for elm in STR:
+        res = res*10 + ord(elm) - ord('0')
+    return res
+
+with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
+    S = fileIn.readline().strip()
+    S += ' '
+    n = ""
+    lst = []
+
+    for elm in S:
+        if(elm >= '0' and elm <= '9'):
+            n += elm
+        else:
+            if(len(n) > 0): lst.append(toInt(n))
+            n = ""
+
+    for elm in lst:
+        fileOut.write(str(elm) + ' ')
+    lst.sort() 
+    fileOut.write('\n')
+    for elm in lst:
+        fileOut.write(str(elm) + ' ')
