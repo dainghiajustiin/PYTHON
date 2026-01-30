@@ -2,6 +2,18 @@ TASK = "REMOVE"
 FILE_INPUT = TASK + ".inp"
 FILE_OUTPUT = TASK + ".OUT"
 
+lst = []
+def getLower(L, R, value, k):
+    res = 10**9
+    while(L <= R):
+        M = (L + R) >> 1
+        if(lst[M] - value <= k):
+            res = M 
+            L = M + 1
+        else:
+            R = M - 1
+    return res 
+
 with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
     n, k = list(map(int, fileIn.readline().split()))
     lst = list(map(int, fileIn.readline().split()))
@@ -11,15 +23,9 @@ with open(FILE_INPUT, 'r') as fileIn, open(FILE_OUTPUT, 'w') as fileOut:
         lst[i] += lst[i-1]
 
     ans = n
-    dct = {0 : 0}
-
     for i in range(1, len(lst)):
-        v = lst[i] - k 
-        if(v in dct):
-            curLen = i - dct[v]
+        j = getLower(i, len(lst) - 1, lst[i-1], k)
+        if(j < len(lst) and lst[j] - lst[i-1] == k):
+            curLen = j - i + 1
             ans = min(ans, n - curLen)
-        
-        if(lst[i] not in dct):
-            dct.update({lst[i] : i})
-    
     fileOut.write(str(ans))
