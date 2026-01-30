@@ -1,0 +1,28 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    
+    ma = -10**18
+    cnt = 0
+
+    i = 0
+    while(i + 2 < len(lst)):
+        value = lst[i] + lst[i+1] + lst[i+2]
+        if(value >= ma):
+            if(value == ma): cnt += 1
+            else:
+                ma = value 
+                cnt = 1
+        i += 1
+    
+    print(ma, cnt)
+
+    return
+
+solve()
