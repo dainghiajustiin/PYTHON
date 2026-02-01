@@ -1,0 +1,22 @@
+dp = [0] * 30005
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n, S = map(int, input().split())
+    c = list(map(int, input().split()))
+    p = list(map(int, input().split()))
+
+    dp[0] = 0
+    for i in range(n):
+        for j in range(S, c[i] - 1, -1):
+            dp[j] = max(dp[j], dp[j - c[i]] + p[i])
+    print(dp[S])
+    
+    return
+
+solve()
