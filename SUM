@@ -1,0 +1,13 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    print(n*n)
+
+    return
+
+solve()
