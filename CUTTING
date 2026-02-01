@@ -1,0 +1,13 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n, m = map(int, input().split())
+    print(n*m - 1)
+
+    return
+
+solve()
