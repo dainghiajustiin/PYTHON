@@ -1,0 +1,31 @@
+def find(N):
+    L = 0
+    R = N
+    ans = -1
+
+    while(L <= R):
+        M = (L + R) >> 1
+        if(M*M*M > N): R = M - 1
+        else:
+            ans = M 
+            L = M + 1
+    
+    if(ans*ans*ans == N): return "YES"
+    else: return "NO"
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    T = int(input())
+
+    for _ in range(T):
+        N = int(input())
+        print(find(N))
+
+    return
+
+solve()
