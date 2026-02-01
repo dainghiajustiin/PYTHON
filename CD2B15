@@ -1,0 +1,17 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    k, n = map(int, input().split())
+    ans = 1
+
+    for i in range(1, min(k, n - k) + 1):
+        ans = ans * (n - i + 1)//i
+    print(ans)
+
+    return
+
+solve()
