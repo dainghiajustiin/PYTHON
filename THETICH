@@ -1,0 +1,14 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    s = n*(n+1)//2
+    print(s*s)
+
+    return
+
+solve()
