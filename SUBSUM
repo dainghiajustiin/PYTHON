@@ -1,0 +1,14 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    a, b = map(int, input().split())
+
+    print((a+b)//2, (a-b)//2)
+
+    return
+
+solve()
