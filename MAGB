@@ -1,0 +1,35 @@
+MAXN = 10**5 + 6
+BIT = [0] * MAXN
+
+def add(idx):
+    while(idx < MAXN):
+        BIT[idx] += 1
+        idx += idx&-idx 
+
+def get(idx):
+    res = 0
+    while(idx > 0):
+        res += BIT[idx]
+        idx -= idx&-idx
+    return res
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    ans = 0
+
+    for i in range(n-1, -1, -1):
+        ans += get(lst[i] - 1)
+        add(lst[i])
+        
+    print(ans)
+
+    return
+
+solve()
