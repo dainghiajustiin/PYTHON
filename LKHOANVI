@@ -1,0 +1,24 @@
+from itertools import permutations 
+
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = [] 
+    for i in range(1, n+1):
+        lst.append(i) 
+    
+    all_result = list(permutations(sorted(lst)))
+
+    for arr in all_result:
+        for elm in arr:
+            print(elm, end=' ')
+        print()
+
+    return
+
+solve()
