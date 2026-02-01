@@ -1,0 +1,21 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    faken = n 
+    s = 0 
+
+    while(faken > 0):
+        s += faken % 10 
+        faken //= 10
+    
+    if(n % s == 0): print("YES")
+    else: print("NO")
+
+    return
+
+solve()
