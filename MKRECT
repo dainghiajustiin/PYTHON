@@ -1,0 +1,25 @@
+def init():
+
+    return
+
+def solve():
+    init()
+
+    n = int(input())
+    lst = list(map(int, input().split()))
+    lst.sort()
+
+    ma1 = 0 
+    ma2 = 0 
+    i = 1
+    while(i < len(lst)):
+        if(lst[i] == lst[i-1]):
+            ma2 = ma1
+            ma1 = lst[i] 
+            i += 1
+        i += 1 
+    print(ma1*ma2)
+
+    return
+
+solve()
